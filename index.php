@@ -28,3 +28,12 @@ $products = [
 ];
 
 var_dump($products);
+
+// PRODUCTS
+echo "<br><br>" . "Expiration/discount test" . "<br>";
+
+$prodDisc = new Product("DiscountedProduct", 100, "Desc...", $categories[1]);
+$prodDisc->setExpDate("sda");
+$prodDisc->setDiscount(41);
+
+var_dump($prodDisc->getDiscount());
