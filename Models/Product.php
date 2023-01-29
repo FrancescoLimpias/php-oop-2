@@ -84,19 +84,18 @@ class Product
         ) {
             throw new Exception("Invalid Argument: discount is not a valid integer!");
         }
-        
+
         $this->discount = $discount;
     }
 
     // Utils
     public function getHTML()
     {
-        return
-            "name: " . $this->getName() .
+        return "name: " . $this->getName() .
             "<br>" . "price: " . $this->getPrice() .
             "<br>" . "description: " . $this->getDescription() .
             "<br>" . "category: " . $this->getCategory()->getHTML() .
-            "<br>" . "exp date: " . $this->getExpDate() ? $this->getExpDate() : "no expiration date" .
+            "<br>" . "exp date: " . ($this->getExpDate() ? $this->getExpDate() : "no expiration date") .
             "<br>" . "discount: " . $this->getDiscount() . "%";
     }
 }
