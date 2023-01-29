@@ -25,6 +25,12 @@ class Food extends Product
     {
         return in_array($ingredient, $this->getIngredients());
     }
+
+    public function getHTML()
+    {
+        return parent::getHTML()
+            . "<br>" . "ingredients: " . implode(", ", $this->getIngredients());
+    }
 }
 
 class Toy extends Product
@@ -33,9 +39,10 @@ class Toy extends Product
     private $age;
 
     // Constructor
-    public function __construct($name, $price, $description, $category, $expDate, $ingredients)
+    public function __construct($name, $price, $description, $category, $age)
     {
         parent::__construct($name, $price, $description, $category);
+        $this->setAge($age);
     }
 
     public function getAge()
